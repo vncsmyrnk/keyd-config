@@ -19,8 +19,8 @@ install: install-deps
 config:
   mkdir -p /etc/keyd
   sudo stow -t /etc/keyd .
-  sudo keyd reload
+  sudo systemctl restart keyd
 
 unset-config:
   sudo stow -D -t /etc/keyd .
-  sudo keyd reload
+  sudo systemctl restart keyd
