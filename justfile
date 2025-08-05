@@ -24,3 +24,6 @@ config:
 unset-config:
   sudo stow -D -t /etc/keyd .
   sudo systemctl restart keyd
+
+show-keycodes:
+  sudo showkey --keycodes
