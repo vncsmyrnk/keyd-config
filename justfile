@@ -14,6 +14,9 @@ install-deps:
   fi
   sudo systemctl enable keyd --now
 
+reload:
+  sudo systemctl restart keyd
+
 install: install-deps
 
 config:
