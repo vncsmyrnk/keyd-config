@@ -1,0 +1,24 @@
+name: keyd Config Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v4
+
+      - name: Install keyd
+        run: |
+          git clone https://github.com/rvaiya/keyd.git
+          cd keyd/
+          make
+          sudo make install
+
+      - run: just config
+
+      - name: Run syntax check
+        run: keyd check
