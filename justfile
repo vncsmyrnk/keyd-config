@@ -2,7 +2,8 @@ default:
   just --list
 
 config:
-  mkdir -p /etc/keyd
+  @keyd check ./default.conf
+  @mkdir -p /etc/keyd
   sudo install -m 644 ./default.conf /etc/keyd
   sudo systemctl restart keyd
 
