@@ -10,5 +10,8 @@ unset-config:
   sudo rm -i /etc/keyd/default.conf
   sudo systemctl restart keyd
 
+reload:
+  keyd reload
+
 show-keycodes:
   sudo keyd monitor
