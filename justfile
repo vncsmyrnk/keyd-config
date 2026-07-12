@@ -11,4 +11,4 @@ unset-config:
   sudo systemctl restart keyd
 
 show-keycodes:
-  sudo showkey --keycodes
+  sudo keyd monitor
